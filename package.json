@@ -1,0 +1,30 @@
+{
+  "name": "cypress-nodejs-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "test": "cypress open",
+    "db:seed": "node util/db:seed.js",
+    "db:reset": "node util/db:reset.js",
+    "ci:dev": "start-server-and-test dev :3000 test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15"
+  },
+  "devDependencies": {
+    "cypress": "^6.4.0",
+    "nodemon": "^2.0.7",
+    "start-server-and-test": "^1.12.0"
+  }
+}
